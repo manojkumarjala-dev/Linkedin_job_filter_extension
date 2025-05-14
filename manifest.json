@@ -1,0 +1,22 @@
+{
+    "name": "Linkedin Jobs Filter",
+    "description": "Remove LinkedIn jobs by title and company name",
+    "background": {
+    "service_worker": "background.js"
+  },
+    "content_scripts": [
+      {
+        "matches": ["https://www.linkedin.com/jobs/search/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+      "default_popup": "hello.html",
+      "run_at": "document_idle"
+    },
+    "permissions": [
+    "storage", "activeTab", "scripting"
+  ]
+  }
